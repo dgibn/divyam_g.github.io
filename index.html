@@ -37,7 +37,7 @@
           <a href="#">Experience</a>
           <a href="#">CV</a>
         </div>
-        <button id="theme-toggle">🌙</button>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
       </nav>
 
       <section class="bio">
@@ -81,10 +81,23 @@
   </div>
 
   <script>
-    // Dark/Light Mode Toggle
     const btn = document.getElementById("theme-toggle");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const currentTheme = localStorage.getItem("theme");
+
+    // Apply stored or default theme
+    if (currentTheme === "light" || (!currentTheme && !prefersDark)) {
+      document.body.classList.add("light");
+      btn.textContent = "☀️";
+    } else {
+      btn.textContent = "🌙";
+    }
+
     btn.addEventListener("click", () => {
       document.body.classList.toggle("light");
+      const isLight = document.body.classList.contains("light");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+      btn.textContent = isLight ? "☀️" : "🌙";
     });
   </script>
 </body>

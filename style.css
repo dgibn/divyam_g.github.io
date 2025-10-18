@@ -4,12 +4,14 @@
   --accent: #3b82f6;
   --accent-red: #ef4444;
   --card: #2b2b2b;
+  --border: #444;
 }
 
 body.light {
   --bg: #fafafa;
-  --fg: #1f1f1f;
+  --fg: #1a1a1a;
   --card: #ffffff;
+  --border: #ddd;
 }
 
 body {
@@ -17,22 +19,25 @@ body {
   font-family: "Inter", sans-serif;
   background-color: var(--bg);
   color: var(--fg);
-  transition: all 0.3s;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
   display: flex;
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
+/* SIDEBAR */
 .sidebar {
   width: 280px;
   background: var(--card);
   padding: 2rem 1rem;
-  border-right: 1px solid #444;
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .profile-img {
@@ -41,6 +46,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+  border: 2px solid var(--border);
 }
 
 h1 {
@@ -51,7 +57,7 @@ h1 {
 .subtitle {
   font-size: 0.9rem;
   text-align: center;
-  color: #bbb;
+  color: #aaa;
   margin-bottom: 1.5rem;
 }
 
@@ -79,24 +85,27 @@ h1 {
   text-decoration: underline;
 }
 
+/* MAIN */
 .main {
   flex: 1;
   padding: 2rem 3rem;
+  transition: background-color 0.4s ease;
 }
 
 .topnav {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.8rem;
   margin-bottom: 2rem;
 }
 
 .nav-links a {
-  color: #ccc;
+  color: #bbb;
   text-decoration: none;
   margin-right: 1.5rem;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -109,8 +118,15 @@ h1 {
   font-size: 1.2rem;
   cursor: pointer;
   color: #ccc;
+  transition: transform 0.3s ease;
 }
 
+#theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+  color: var(--accent);
+}
+
+/* BIO SECTION */
 .bio p {
   line-height: 1.7;
   margin-bottom: 1.2rem;
@@ -135,6 +151,7 @@ h1 {
   font-style: italic;
 }
 
+/* NEWS */
 .news h2 {
   font-size: 1.5rem;
   margin-top: 2rem;
