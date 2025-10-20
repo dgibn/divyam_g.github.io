@@ -5,9 +5,6 @@
   --accent-red: #ef4444;
   --card: #2b2b2b;
   --border: #444;
-  --icon-color: #aaa;
-  --icon-hover-github: #333;
-  --icon-hover-linkedin: #0077b5;
 }
 
 body.light {
@@ -15,9 +12,6 @@ body.light {
   --fg: #1a1a1a;
   --card: #ffffff;
   --border: #ddd;
-  --icon-color: #555;
-  --icon-hover-github: #000;
-  --icon-hover-linkedin: #0a66c2;
 }
 
 body {
@@ -67,57 +61,28 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* CONTACT LIST */
 .contact-list {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
   width: 100%;
 }
 
 .contact-list li {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  gap: 8px;
-}
-
-.contact-list i,
-.contact-list svg {
-  width: 18px;
-  height: 18px;
-  color: var(--icon-color);
-  flex-shrink: 0;
-  transition: color 0.25s ease, transform 0.2s ease;
+  gap: 0.4rem;
 }
 
 .contact-list a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.25s ease;
 }
 
 .contact-list a:hover {
-  color: var(--accent);
   text-decoration: underline;
-}
-
-.contact-list a:hover i,
-.contact-list a:hover svg {
-  transform: scale(1.1);
-}
-
-.contact-list a[href*="github"]:hover i,
-.contact-list a[href*="github"]:hover svg {
-  color: var(--icon-hover-github);
-}
-
-.contact-list a[href*="linkedin"]:hover i,
-.contact-list a[href*="linkedin"]:hover svg {
-  color: var(--icon-hover-linkedin);
 }
 
 /* MAIN */
@@ -153,7 +118,7 @@ h1 {
   font-size: 1.2rem;
   cursor: pointer;
   color: #ccc;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 #theme-toggle:hover {
@@ -186,7 +151,7 @@ h1 {
   font-style: italic;
 }
 
-/* NEWS SECTION */
+/* NEWS */
 .news h2 {
   font-size: 1.5rem;
   margin-top: 2rem;
@@ -205,3 +170,4 @@ h1 {
 .news li {
   margin: 0.8rem 0;
 }
+
