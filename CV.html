@@ -3,9 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Divyam Gupta</title>
+  <title>CV — Divyam Gupta</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.css" rel="stylesheet">
+
+  <style>
+    /* --- CV PAGE STYLES --- */
+
+    .cv-section {
+      margin-bottom: 2rem;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .download-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.25s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .cv-item {
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+      transition: transform 0.3s ease, background 0.3s ease;
+      padding: 0.8rem 1rem;
+      border-radius: 0.8rem;
+    }
+
+    .cv-item:hover {
+      transform: translateY(-4px);
+      background: var(--bg-secondary);
+    }
+
+    .cv-item h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .cv-item span {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 0.8rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,15 +103,11 @@
       <ul class="contact-list">
         <li><i class="lucide-map-pin"></i> Boston, MA</li>
         <li><i class="lucide-school"></i> MSc in AI, Northeastern University</li>
-        <li><i class="lucide-school"></i> BTech ,Indian Institute of Technology, Bombay</li>
+        <li><i class="lucide-school"></i> BTech, Indian Institute of Technology Bombay</li>
         <li><i class="lucide-mail"></i> <a href="mailto:divs25.iitb@gmail.com">Email</a></li>
-        <li><i class="lucide-phone"></i>Phone : +1 (857)-370-8583</li>
-        <li><i class="lucide-graduation-cap"></i> <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=7YzH5jcAAAAJ">Google Scholar</a></li>
-        <!-- <li><i class="lucide-book-open-text"></i> <a href="#">Semantic Scholar</a></li> -->
-        <!-- <li><i class="lucide-activity"></i> <a href="#">ORCID</a></li> -->
+        <li><i class="lucide-phone"></i> +1 (857)-370-8583</li>
         <li><i class="lucide-github"></i> <a href="https://github.com/dgibn">GitHub</a></li>
         <li><i class="lucide-linkedin"></i> <a href="https://www.linkedin.com/in/divyam-gupta-425695228/">LinkedIn</a></li>
-        <li><i class="lucide-twitter"></i> <a href="https://openreview.net/profile?id=%7EDivyam_Gupta2">OpenReview</a></li>
       </ul>
     </aside>
 
@@ -36,63 +116,81 @@
       <nav class="topnav">
         <div class="nav-links">
           <a href="index.html">Home</a>
-          <a href="publications.html" class="active">Publications</a>
-          <a href="experience.html">Experience</a>
-          <a href="CV.html">CV</a>
+          <a href="publications.html">Publications</a>
+          <a href="CV.html" class="active">CV</a>
         </div>
         <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
       </nav>
 
-      <section class="bio">
-        <p>
-          I apply tools from <a href="#" class="link">mechanistic</a> interpretability to form faithful abstractions of the inner workings of LLMs.
-          I focus on studying LLMs' <strong>knowledge</strong> — <a href="#" class="link-red">beliefs</a> about the real world they have learned
-          during training — how this knowledge is stored in the model parameters, how it is encoded in the model representations during retrieval,
-          and if LLMs can <strong>reason</strong> with this knowledge in scenarios where it needs to link together multiple pieces of information.
-        </p>
+      <section class="cv">
+        <div class="cv-header">
+          <h2>Curriculum Vitae</h2>
+          <button class="download-btn" onclick="window.open('Divyam_Gupta_CV.pdf', '_blank')">
+            <i class="lucide-download"></i> Download PDF
+          </button>
+        </div>
 
-        <p>
-          Before starting my Masters, I was an Assistant Researcher at MBZUAI, Abu Dhabi working on Image classification in domain generalized settings. I also completed my B.Tech from <a href="#" class="link">Indian Institute of Technology Bombay</a> this year, where I majored in Chemical Engineering with received a minors degree in Computer Science and Engineering. I carried out AI and vision research under the guidance of Dr.Biplab Banerjee leading to publications at top-tier AI conferences. I received the Undergraduate research award for one of my research work on image retrieval work which got accepted at ECCV 2024. 
-        </p>
+        <!-- Education -->
+        <div class="cv-section">
+          <h3><i class="lucide-school"></i> Education</h3>
+          <div class="cv-item">
+            <h3>Northeastern University</h3>
+            <span>MSc in Artificial Intelligence (2025 – Present)</span><br />
+            <em>Boston, USA</em>
+          </div>
+          <div class="cv-item">
+            <h3>Indian Institute of Technology Bombay</h3>
+            <span>B.Tech in Chemical Engineering, Minor in Computer Science (2021 – 2025)</span><br />
+            <em>Mumbai, India</em>
+          </div>
+        </div>
 
-        <p class="italic">
-          Feel free to reach out to me if you would like to connect regarding research collaborations, internships, or just to say hi!
-        </p>
-      </section>
+        <!-- Research Experience -->
+        <div class="cv-section">
+          <h3><i class="lucide-flask-round"></i> Research Experience</h3>
+          <div class="cv-item">
+            <h3>Assistant Researcher — MBZUAI</h3>
+            <span>Jan 2025 – Aug 2025</span>
+            <p>Worked on <strong>domain generalization for image classification</strong> and developed novel hyperbolic learning-based methods for unseen domain recognition. Published in NeurIPS 2025.</p>
+          </div>
 
-      <section class="news">
-        <h2>News</h2>
-        <ul>
-          <li>
-            <strong>09/2025</strong>
-            <ul>
-              <li>
-                My latest  <a href="https://vaibhavrathore1999.github.io/HiDISC/" class="link">paper</a>  HiDISC, introduces a hyperbolic representation framework for DG-GCD that couples penalized Busemann prototype anchoring, Tangent CutMix in tangent space, and a hybrid hyperbolic contrastive/outlier loss to handle unseen target domains with both known and novel classes, achieving strong results on PACS, Office-Home, and DomainNet got acceptde at NeurIPS 2025.
-              </li>
-               <li>Started my Masters in Artificial Intelligence at Northeastern University, Boston </li>
-            </ul>
-          </li>
-          <li><strong>05/2025</strong>
-            <ul>
-              <li>Started my role as an Assistant Researcher at the Computer vision department of Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi</li>
-              <li>Graduated from Indian Institute of Technology Bombay</li>
-          </ul>
-          </li>
-          <li>
-            <strong>03/2025</strong>
-                My latest  <a href="https://vaibhavrathore1999.github.io/HiDISC/" class="link">paper</a>  HiDISC, introduces a hyperbolic representation framework for DG-GCD that couples penalized Busemann prototype anchoring, Tangent CutMix in tangent space, and a hybrid hyperbolic contrastive/outlier loss to handle unseen target domains with both known and novel classes, achieving strong results on PACS, Office-Home, and DomainNet got acceptde at NeurIPS 2025.
-          </li>
-        </ul>
+          <div class="cv-item">
+            <h3>Undergraduate Researcher — IIT Bombay</h3>
+            <span>Jan 2023 – May 2025</span>
+            <p>Worked under Dr. Biplab Banerjee on <strong>vision-language models</strong> and <strong>image retrieval</strong> projects, resulting in publications at ECCV 2024 and CVPR 2025.</p>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="cv-section">
+          <h3><i class="lucide-briefcase"></i> Professional Experience</h3>
+          <div class="cv-item">
+            <h3>Software Engineer Intern — Samsung Research</h3>
+            <span>May 2024 – Aug 2024</span>
+            <p>Built scalable AI modules for <strong>real-time object tracking</strong> and <strong>image understanding</strong> pipelines, optimizing inference speed by 40%.</p>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-section">
+          <h3><i class="lucide-cpu"></i> Technical Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-card">Python, PyTorch, TensorFlow</div>
+            <div class="skill-card">Computer Vision, LLMs, CLIP</div>
+            <div class="skill-card">C++, SQL, Git, Linux</div>
+            <div class="skill-card">LaTeX, Research Writing</div>
+          </div>
+        </div>
       </section>
     </main>
   </div>
 
   <script>
+    // Theme toggle
     const btn = document.getElementById("theme-toggle");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const currentTheme = localStorage.getItem("theme");
 
-    // Apply stored or default theme
     if (currentTheme === "light" || (!currentTheme && !prefersDark)) {
       document.body.classList.add("light");
       btn.textContent = "☀️";
