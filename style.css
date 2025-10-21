@@ -1,5 +1,5 @@
 :root {
-  --bg: #6dbdf6;
+  --bg: #1f1f1f;
   --fg: #e0e0e0;
   --accent: #3b82f6;
   --accent-red: #ef4444;
@@ -170,4 +170,3 @@ h1 {
 .news li {
   margin: 0.8rem 0;
 }
-
